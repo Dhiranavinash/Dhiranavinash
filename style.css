@@ -142,6 +142,7 @@ body {
 
 .hero-image-container {
     flex: 0 0 300px;
+    max-width: 300px;
     height: 400px;
     border-radius: 20px;
     overflow: hidden;
@@ -187,7 +188,6 @@ h4 {
     font-family: var(--font-heading);
     font-size: 1.3rem;
     margin-bottom: 7px;
-    text-align: justify;
 }
 
 .subtitle {
@@ -433,6 +433,12 @@ ul ul {
     gap: 10px;
 }
 
+/* Text justification for desktop only */
+p, li, h3, h4, .exp-item, .edu-inst, .pub-meta {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 /* ========== ANIMATIONS ========== */
 .fade-in {
     opacity: 0;
@@ -452,7 +458,7 @@ ul ul {
 
 /* ========== MOBILE RESPONSIVE STYLES ========== */
 
-/* Tablet (768px and below) */
+/* Tablet (968px and below) */
 @media screen and (max-width: 968px) {
     .content-area {
         padding: 40px 50px;
@@ -476,6 +482,7 @@ ul ul {
 
     .hero-image-container {
         flex: 0 0 250px;
+        max-width: 250px;
         height: 330px;
     }
 
@@ -497,7 +504,7 @@ ul ul {
         min-height: 100vh;
     }
 
-    /* Sidebar becomes horizontal navigation */
+    /* ===== SIDEBAR - becomes horizontal navigation ===== */
     .sidebar {
         width: 100%;
         padding: 20px;
@@ -507,6 +514,7 @@ ul ul {
         position: sticky;
         top: 0;
         z-index: 100;
+        background: rgba(242,232,207,0.95);
     }
 
     .logo {
@@ -527,33 +535,36 @@ ul ul {
         font-size: 0.95rem;
     }
 
+    /* Simplify hover effects for touch devices */
+    .nav-links li::after {
+        display: none;
+    }
+
     .nav-links li:hover,
     .nav-links li.active {
         transform: scale(1.05);
     }
 
-    /* Content area adjustments */
-.content-area {
-    padding: 10px 10px !important;
-    overflow-y: visible;
-    height: auto;
-    display: block;
-}
+    /* ===== CONTENT AREA - fixed for mobile ===== */
+    .content-area {
+        padding: 20px !important;
+        overflow-y: visible;
+        height: auto;
+        display: block;
+    }
 
-.content-section {
-    position: static !important;
-    padding: 0 !important;
-    margin-top: 20px;   /* small space below navbar */
-    height: auto;
-    transform: none !important;
-}
+    .content-section {
+        position: static !important;
+        padding: 20px !important;
+        margin-top: 0;
+        height: auto;
+        transform: none !important;
+    }
 
+    /* Properly hide inactive sections */
     .content-section:not(.active) {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    pointer-events: none;
-}
+        display: none !important;
+    }
 
     .content-section.active {
         display: block;
@@ -561,7 +572,7 @@ ul ul {
         visibility: visible;
     }
 
-    /* Hero section */
+    /* ===== HERO SECTION ===== */
     .hero-content {
         flex-direction: column-reverse;
         gap: 30px;
@@ -574,8 +585,9 @@ ul ul {
 
     .hero-image-container {
         flex: 0 0 auto;
-        width: 200px;
-        height: 200px;
+        width: 100%;
+        max-width: 250px;
+        height: 250px;
         margin: 0 auto;
     }
 
@@ -583,6 +595,7 @@ ul ul {
         margin: 20px auto 0;
     }
 
+    /* ===== TYPOGRAPHY ===== */
     h1 {
         font-size: 2.5rem;
     }
@@ -604,7 +617,14 @@ ul ul {
         font-size: 1.2rem;
     }
 
-    /* Cards */
+    /* Left-align text on mobile for better readability */
+    p, li, h3, h4, .exp-item, .edu-inst, .pub-meta,
+    .project-card p, #about p {
+        text-align: left;
+        text-justify: auto;
+    }
+
+    /* ===== CARDS ===== */
     .card,
     .publication-card,
     .edu-card {
@@ -612,7 +632,7 @@ ul ul {
         margin-bottom: 24px;
     }
 
-    /* Education header */
+    /* Education header stacked layout */
     .edu-header {
         flex-direction: column;
         align-items: flex-start;
@@ -625,19 +645,19 @@ ul ul {
         margin-bottom: 15px;
     }
 
-    /* Scrollable content */
+    /* ===== SCROLLABLE CONTENT ===== */
     .scrollable-content {
         max-height: none;
         padding-right: 0;
     }
 
-    /* Grid */
+    /* ===== GRID ===== */
     .grid-container {
         grid-template-columns: 1fr;
         gap: 15px;
     }
 
-    /* Contact buttons */
+    /* ===== CONTACT BUTTONS ===== */
     .contact-links {
         flex-direction: column;
     }
@@ -651,6 +671,7 @@ ul ul {
 
 /* Small mobile (480px and below) */
 @media screen and (max-width: 480px) {
+    /* ===== SIDEBAR ===== */
     .sidebar {
         padding: 15px;
     }
@@ -668,14 +689,16 @@ ul ul {
         font-size: 0.85rem;
     }
 
+    /* ===== CONTENT AREA ===== */
     .content-area {
-        padding: 20px 15px;
+        padding: 15px !important;
     }
     
     .content-section {
-        padding: 20px 15px;
+        padding: 15px !important;
     }
 
+    /* ===== TYPOGRAPHY ===== */
     h1 {
         font-size: 2rem;
     }
@@ -697,17 +720,36 @@ ul ul {
         letter-spacing: 1px;
     }
 
-    .hero-image-container {
-        width: 180px;
-        height: 180px;
+    /* ===== HERO SECTION ===== */
+    .hero-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 20px;
     }
 
+    .hero-text {
+        text-align: center !important;
+    }
+
+    .subtitle {
+        text-align: center !important;
+    }
+
+    .hero-image-container {
+        width: 100% !important;
+        max-width: 200px !important;
+        height: 200px !important;
+    }
+
+    /* ===== CARDS ===== */
     .card,
     .publication-card,
     .edu-card {
         padding: 16px;
     }
 
+    /* ===== PUBLICATIONS ===== */
     .pub-title {
         font-size: 1.05rem;
     }
@@ -720,37 +762,4 @@ ul ul {
         font-size: 0.9rem;
         padding: 7px 18px;
     }
-
-
-    /* 🔥 MOBILE FIX FOR HERO SECTION */
-    .hero-content {
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        gap: 20px;
-        width: 100%;
-    }
-
-    .hero-text {
-        width: 100%;
-        text-align: center !important;
-    }
-
-    .subtitle {
-        text-align: center !important;
-        margin: 0 auto !important;
-        display: block;
-    }
-
-    .hero-image-container {
-        width: 100% !important;
-        display: flex;
-        justify-content: center !important;
-        align-items: center;
-    }
-}
-p, li, h3, h4, .exp-item, .edu-inst, .pub-meta {
-    text-align: justify;
-    text-justify: inter-word;
 }
