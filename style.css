@@ -618,11 +618,20 @@ p, li, h3, h4, .exp-item, .edu-inst, .pub-meta {
         font-size: 1.2rem;
     }
 
-    /* Left-align text on mobile for better readability */
-    p, li, h3, h4, .exp-item, .edu-inst, .pub-meta,
-    .project-card p, #about p {
+    /* Left-align headings and center hero text, justify body text */
+    h1, h2, h3, h4, .subtitle {
         text-align: left;
-        text-justify: auto;
+    }
+
+    .hero-text h1,
+    .hero-text .subtitle {
+        text-align: center !important;
+    }
+
+    p, li, .exp-item, .edu-inst, .pub-meta,
+    .project-card p, #about p {
+        text-align: justify;
+        text-justify: inter-word;
     }
 
     /* ===== CARDS ===== */
@@ -741,13 +750,17 @@ p, li, h3, h4, .exp-item, .edu-inst, .pub-meta {
         width: 100% !important;
         max-width: 200px !important;
         height: 200px !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 
     .hero-image {
-        object-fit: contain !important;
+        object-fit: cover !important;
         object-position: center !important;
+        width: 100% !important;
+        height: 100% !important;
     }
 
     /* ===== CARDS ===== */
