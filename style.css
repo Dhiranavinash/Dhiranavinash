@@ -454,7 +454,10 @@ ul ul {
 
 /* Tablet (768px and below) */
 @media screen and (max-width: 968px) {
-    .content-area,
+    .content-area {
+        padding: 40px 50px;
+    }
+    
     .content-section {
         padding: 40px 50px;
     }
@@ -484,7 +487,8 @@ ul ul {
 /* Mobile (768px and below) */
 @media screen and (max-width: 768px) {
     body {
-        overflow: auto;
+        overflow: visible;
+        height: auto;
     }
 
     .app-container {
@@ -525,26 +529,33 @@ ul ul {
 
     .nav-links li:hover,
     .nav-links li.active {
-        transform: translateX(0);
         transform: scale(1.05);
     }
 
     /* Content area adjustments */
     .content-area {
         padding: 30px 20px;
-        overflow-y: auto;
+        overflow-y: visible;
         height: auto;
+        display: block;
     }
 
     .content-section {
-        position: relative;
+        position: static;
         padding: 30px 20px;
         height: auto;
-        min-height: calc(100vh - 140px);
+        min-height: auto;
+        transform: none;
+    }
+
+    .content-section:not(.active) {
+        display: none;
     }
 
     .content-section.active {
-        display: flex;
+        display: block;
+        opacity: 1;
+        visibility: visible;
     }
 
     /* Hero section */
@@ -654,7 +665,10 @@ ul ul {
         font-size: 0.85rem;
     }
 
-    .content-area,
+    .content-area {
+        padding: 20px 15px;
+    }
+    
     .content-section {
         padding: 20px 15px;
     }
