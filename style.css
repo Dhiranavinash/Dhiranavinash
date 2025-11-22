@@ -720,6 +720,35 @@ ul ul {
         font-size: 0.9rem;
         padding: 7px 18px;
     }
+
+
+    /* 🔥 MOBILE FIX FOR HERO SECTION */
+    .hero-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .hero-text {
+        width: 100%;
+        text-align: center !important;
+    }
+
+    .subtitle {
+        text-align: center !important;
+        margin: 0 auto !important;
+        display: block;
+    }
+
+    .hero-image-container {
+        width: 100% !important;
+        display: flex;
+        justify-content: center !important;
+        align-items: center;
+    }
 }
 p, li, h3, h4, .exp-item, .edu-inst, .pub-meta {
     text-align: justify;
