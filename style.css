@@ -549,8 +549,11 @@ ul ul {
     }
 
     .content-section:not(.active) {
-        display: none;
-    }
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    pointer-events: none;
+}
 
     .content-section.active {
         display: block;
