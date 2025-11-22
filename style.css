@@ -427,6 +427,12 @@ ul ul {
     text-justify: inter-word;
 }
 
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 /* ========== ANIMATIONS ========== */
 .fade-in {
     opacity: 0;
@@ -444,7 +450,257 @@ ul ul {
     }
 }
 
-/* ========== REMOVED ========== */
-.bg-shape {
-    display: none;
+/* ========== MOBILE RESPONSIVE STYLES ========== */
+
+/* Tablet (768px and below) */
+@media screen and (max-width: 968px) {
+    .content-area,
+    .content-section {
+        padding: 40px 50px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content {
+        gap: 40px;
+    }
+
+    .hero-image-container {
+        flex: 0 0 250px;
+        height: 330px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile (768px and below) */
+@media screen and (max-width: 768px) {
+    body {
+        overflow: auto;
+    }
+
+    .app-container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    /* Sidebar becomes horizontal navigation */
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+        border-right: none;
+        border-bottom: 3px solid rgba(40,54,24,0.1);
+        justify-content: flex-start;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-links li {
+        margin-bottom: 0;
+        font-size: 0.95rem;
+    }
+
+    .nav-links li:hover,
+    .nav-links li.active {
+        transform: translateX(0);
+        transform: scale(1.05);
+    }
+
+    /* Content area adjustments */
+    .content-area {
+        padding: 30px 20px;
+        overflow-y: auto;
+        height: auto;
+    }
+
+    .content-section {
+        position: relative;
+        padding: 30px 20px;
+        height: auto;
+        min-height: calc(100vh - 140px);
+    }
+
+    .content-section.active {
+        display: flex;
+    }
+
+    /* Hero section */
+    .hero-content {
+        flex-direction: column-reverse;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-image-container {
+        flex: 0 0 auto;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    .decorative-line {
+        margin: 20px auto 0;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    h4 {
+        font-size: 1.15rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    /* Cards */
+    .card,
+    .publication-card,
+    .edu-card {
+        padding: 20px;
+        margin-bottom: 24px;
+    }
+
+    /* Education header */
+    .edu-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .exp-date,
+    .edu-date {
+        padding-left: 0;
+        margin-bottom: 15px;
+    }
+
+    /* Scrollable content */
+    .scrollable-content {
+        max-height: none;
+        padding-right: 0;
+    }
+
+    /* Grid */
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Contact buttons */
+    .contact-links {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+    }
+}
+
+/* Small mobile (480px and below) */
+@media screen and (max-width: 480px) {
+    .sidebar {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links li {
+        font-size: 0.85rem;
+    }
+
+    .content-area,
+    .content-section {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    h4 {
+        font-size: 1.05rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-image-container {
+        width: 180px;
+        height: 180px;
+    }
+
+    .card,
+    .publication-card,
+    .edu-card {
+        padding: 16px;
+    }
+
+    .pub-title {
+        font-size: 1.05rem;
+    }
+
+    .pub-meta {
+        font-size: 0.9rem;
+    }
+
+    .pub-link {
+        font-size: 0.9rem;
+        padding: 7px 18px;
+    }
 }
