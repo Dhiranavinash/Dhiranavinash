@@ -533,20 +533,20 @@ ul ul {
     }
 
     /* Content area adjustments */
-    .content-area {
-        padding: 30px 20px;
-        overflow-y: visible;
-        height: auto;
-        display: block;
-    }
+.content-area {
+    padding: 10px 10px !important;
+    overflow-y: visible;
+    height: auto;
+    display: block;
+}
 
-    .content-section {
-        position: static;
-        padding: 30px 20px;
-        height: auto;
-        min-height: auto;
-        transform: none;
-    }
+.content-section {
+    position: static !important;
+    padding: 0 !important;
+    margin-top: 20px;   /* small space below navbar */
+    height: auto;
+    transform: none !important;
+}
 
     .content-section:not(.active) {
     opacity: 0;
